@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.infox.altos.altos">
+    package="com.infox.altos">
    <application
-        android:label="altos"
+        android:label="Altos"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

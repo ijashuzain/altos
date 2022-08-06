@@ -1,42 +1,35 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import '../constants/colors.dart';
 
-class CButton extends StatelessWidget {
+class RoundedButton extends StatelessWidget {
+
   final String title;
-  final Color color;
   final VoidCallback onTap;
-  const CButton({
-    Key? key,
-    required this.title,
-    this.color = AppColor.primary,
-    required this.onTap,
-  }) : super(key: key);
+
+  const RoundedButton({Key? key, required this.title, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
+      onTap: (){
         onTap();
       },
       child: Container(
-        height: 55,
-        width: 100.h,
+        height: 40,
+        width: 30.w,
         decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(12),
+          color: AppColor.primary,
+          borderRadius: BorderRadius.circular(30),
         ),
         child: Center(
           child: Text(
             title,
             style: TextStyle(
-              fontFamily: "Mulish",
-              fontWeight: FontWeight.w600,
               color: Colors.white,
               fontSize: 12.sp,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Mulish",
             ),
           ),
         ),

@@ -1,4 +1,4 @@
-package com.infox.altos.altos
+package com.infox.altos
 
 import io.flutter.embedding.android.FlutterActivity
 

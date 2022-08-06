@@ -1,10 +1,14 @@
 import 'package:altos/constants/colors.dart';
 import 'package:altos/splash.dart';
 import 'package:altos/views/home/main_home.dart';
+import 'package:altos/views/home/manager_home.dart';
 import 'package:altos/views/profile/profile_main.dart';
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:provider/provider.dart';
+import '../../providers/customer_provider.dart';
+import '../customer/customer_details.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({Key? key}) : super(key: key);
@@ -46,7 +50,15 @@ class _BottomNavBarState extends State<BottomNavBar> {
       floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColor.primary,
-        onPressed: (){},
+        onPressed: (){
+          context.read<CustomerProvider>().selectCustomer(null);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddCustomer(isAddData: true,),
+            ),
+          );
+        },
         child: const Icon(
           Icons.add,
           color: Colors.white,

@@ -36,9 +36,9 @@ class _CTabBarState extends State<CTabBar> {
                   widget.onSelected(0);
                 },
                 child: SizedBox(
-                  width: 20.w,
+                  width: 12.w,
                   child: Text(
-                    "Today",
+                    "Call",
                     style: TextStyle(
                       fontFamily: "Mulish",
                       fontWeight: selection == 0 ? FontWeight.w600 : FontWeight.w500,
@@ -58,7 +58,7 @@ class _CTabBarState extends State<CTabBar> {
                 child: SizedBox(
                   width: 23.w,
                   child: Text(
-                    "Yesterday",
+                    "Confirmed",
                     style: TextStyle(
                       fontFamily: "Mulish",
                       fontWeight: selection == 1 ? FontWeight.w600 : FontWeight.w500,
@@ -78,11 +78,31 @@ class _CTabBarState extends State<CTabBar> {
                 child: SizedBox(
                   width: 20.w,
                   child: Text(
-                    "Week",
+                    "Pending",
                     style: TextStyle(
                       fontFamily: "Mulish",
                       fontWeight: selection == 2 ? FontWeight.w600 : FontWeight.w500,
                       color: selection == 2 ? AppColor.black : AppColor.grey,
+                      fontSize: 10.sp,
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selection = 3;
+                  });
+                  widget.onSelected(3);
+                },
+                child: SizedBox(
+                  width: 20.w,
+                  child: Text(
+                    "Rejected",
+                    style: TextStyle(
+                      fontFamily: "Mulish",
+                      fontWeight: selection == 3 ? FontWeight.w600 : FontWeight.w500,
+                      color: selection == 3 ? AppColor.black : AppColor.grey,
                       fontSize: 10.sp,
                     ),
                   ),
@@ -102,11 +122,11 @@ class _CTabBarState extends State<CTabBar> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 10.w,
+                      width: 7.w,
                       height: 0.3.h,
                       color: selection == 0 ? AppColor.primary : Colors.transparent,
                     ),
-                    SizedBox(width: 10.w,),
+                    SizedBox(width: 5.w,),
                     Container(
                       width: 16.w,
                       height: 0.3.h,
@@ -114,9 +134,15 @@ class _CTabBarState extends State<CTabBar> {
                     ),
                     SizedBox(width: 7.w,),
                     Container(
-                      width: 10.w,
+                      width: 13.w,
                       height: 0.3.h,
                       color: selection == 2 ? AppColor.primary : Colors.transparent,
+                    ),
+                    SizedBox(width: 7.w,),
+                    Container(
+                      width: 14.w,
+                      height: 0.3.h,
+                      color: selection == 3 ? AppColor.primary : Colors.transparent,
                     ),
                     SizedBox(width: 7.w,),
                   ],
